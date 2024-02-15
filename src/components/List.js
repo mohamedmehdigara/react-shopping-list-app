@@ -1,22 +1,20 @@
 import React from "react";
 import Item from "./Item";
-import StyledList from "./StyledList";
 
-
-const List = ({ items, onItemComplete, onItemDelete }) => {
+const List = ({ items, onItemComplete, onItemDelete,onDelete, onQuantityChange, onEdit }) => {
   return (
-    <StyledList>
     <ul>
       {items.map((item) => (
         <Item
           key={item.id}
           item={item}
           onItemComplete={onItemComplete}
-          onItemDelete={onItemDelete}
+          onItemDelete={onDelete}
+          onQuantityChange={onQuantityChange}
+          onEdit={onEdit}
         />
       ))}
     </ul>
-    </StyledList>
   );
 };
 
